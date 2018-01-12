@@ -1,7 +1,7 @@
 {
   "name": "webpack-es6-starter",
   "scripts": {
-    "webpack": "webpack --watch"
+    "webpack": "webpack -p --watch"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
