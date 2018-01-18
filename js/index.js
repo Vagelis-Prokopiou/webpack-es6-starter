@@ -1,11 +1,17 @@
-import
-{
-    add
-    , divide
-} from "./functions";
+import { add, divide } from "./functions";
+let num1 = 100;
+let num2 = 4;
+console.log('add()', add(num1, num2));
+console.log('divide()', divide(num1, num2));
 
+// Rx example setup.
+import Rx from 'rxjs/Rx';
 
-let aaaa = 100;
-let a = 4;
-console.log('add()', add(aaaa, a));
-console.log('divide()', divide(aaaa, a));
+const button = document.getElementById('button');
+const clicks = Rx.Observable
+    .fromEvent(button, 'click')
+    .map(event => ({ isTrusted: event.isTrusted }));
+
+const clicksSubcription = clicks
+    .subscribe(value => console.log('Clicked:', value));
+
